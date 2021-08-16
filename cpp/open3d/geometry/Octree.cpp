@@ -549,6 +549,12 @@ Octree& Octree::Scale(const double scale, const Eigen::Vector3d& center) {
     return *this;
 }
 
+Octree& Octree::Scale(const Eigen::Vector3d& scale,
+                      const Eigen::Vector3d& center) {
+    utility::LogError("Not implemented");
+    return *this;
+}
+
 Octree& Octree::Rotate(const Eigen::Matrix3d& R,
                        const Eigen::Vector3d& center) {
     utility::LogError("Not implemented");

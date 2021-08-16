@@ -125,6 +125,12 @@ VoxelGrid &VoxelGrid::Scale(const double scale, const Eigen::Vector3d &center) {
     return *this;
 }
 
+VoxelGrid &VoxelGrid::Scale(const Eigen::Vector3d& scale,
+                            const Eigen::Vector3d &center) {
+    utility::LogError("Not implemented");
+    return *this;
+}
+
 VoxelGrid &VoxelGrid::Rotate(const Eigen::Matrix3d &R,
                              const Eigen::Vector3d &center) {
     utility::LogError("Not implemented");

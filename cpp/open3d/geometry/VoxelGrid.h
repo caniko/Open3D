@@ -97,6 +97,8 @@ public:
                          bool relative = true) override;
     VoxelGrid &Scale(const double scale,
                      const Eigen::Vector3d &center) override;
+    VoxelGrid &Scale(const Eigen::Vector3d &scale,
+                     const Eigen::Vector3d &center) override;
     VoxelGrid &Rotate(const Eigen::Matrix3d &R,
                       const Eigen::Vector3d &center) override;
 

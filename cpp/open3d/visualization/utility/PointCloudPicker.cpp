@@ -103,6 +103,13 @@ PointCloudPicker& PointCloudPicker::Scale(const double scale,
     return *this;
 }
 
+PointCloudPicker& PointCloudPicker::Scale(
+        const Eigen::Vector3d& scale,
+        const Eigen::Vector3d& center) {
+    // Do nothing
+    return *this;
+}
+
 PointCloudPicker& PointCloudPicker::Rotate(const Eigen::Matrix3d& R,
                                            const Eigen::Vector3d& center) {
     // Do nothing

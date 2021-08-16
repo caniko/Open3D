@@ -74,9 +74,10 @@ public:
     LineSet &Translate(const Eigen::Vector3d &translation,
                        bool relative = true) override;
     LineSet &Scale(const double scale, const Eigen::Vector3d &center) override;
+    LineSet &Scale(const Eigen::Vector3d &scale,
+                   const Eigen::Vector3d &center) override;
     LineSet &Rotate(const Eigen::Matrix3d &R,
                     const Eigen::Vector3d &center) override;
-
     LineSet &operator+=(const LineSet &lineset);
     LineSet operator+(const LineSet &lineset) const;
 

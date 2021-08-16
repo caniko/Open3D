@@ -75,6 +75,12 @@ LineSet &LineSet::Scale(const double scale, const Eigen::Vector3d &center) {
     return *this;
 }
 
+LineSet &LineSet::Scale(const Eigen::Vector3d& scale,
+                        const Eigen::Vector3d &center) {
+    ScalePoints(scale, points_, center);
+    return *this;
+}
+
 LineSet &LineSet::Rotate(const Eigen::Matrix3d &R,
                          const Eigen::Vector3d &center) {
     RotatePoints(R, points_, center);

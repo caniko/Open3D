@@ -59,6 +59,8 @@ public:
                                 bool relative = true) override;
     PointCloudPicker& Scale(const double scale,
                             const Eigen::Vector3d& center) override;
+    PointCloudPicker& Scale(const Eigen::Vector3d& scale,
+                            const Eigen::Vector3d& center) override;
     PointCloudPicker& Rotate(const Eigen::Matrix3d& R,
                              const Eigen::Vector3d& center) override;
     bool SetPointCloud(std::shared_ptr<const geometry::Geometry> ptr);

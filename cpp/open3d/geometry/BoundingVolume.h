@@ -81,6 +81,8 @@ public:
                                            bool relative = true) override;
     virtual OrientedBoundingBox& Scale(const double scale,
                                        const Eigen::Vector3d& center) override;
+    virtual OrientedBoundingBox& Scale(const Eigen::Vector3d& scale,
+                                       const Eigen::Vector3d& center) override;
     virtual OrientedBoundingBox& Rotate(const Eigen::Matrix3d& R,
                                         const Eigen::Vector3d& center) override;
 
@@ -193,6 +195,9 @@ public:
     /// \param center Center used for the scaling operation.
     virtual AxisAlignedBoundingBox& Scale(
             const double scale, const Eigen::Vector3d& center) override;
+    virtual AxisAlignedBoundingBox& Scale(
+            const Eigen::Vector3d& scale,
+            const Eigen::Vector3d& center) override;
 
     /// \brief an AxisAlignedBoundingBox can not be rotated. This method
     /// will throw an error.

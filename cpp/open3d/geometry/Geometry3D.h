@@ -86,6 +86,8 @@ public:
     /// \param center Scale center that is used to resize the geometry.
     virtual Geometry3D& Scale(const double scale,
                               const Eigen::Vector3d& center) = 0;
+    virtual Geometry3D& Scale(const Eigen::Vector3d& scale,
+                              const Eigen::Vector3d& center);
 
     /// \brief Apply rotation to the geometry coordinates and normals.
     /// Given a rotation matrix \f$R\f$, and center \f$c\f$, a given point
@@ -182,6 +184,10 @@ protected:
     /// \param points A list of points to be transformed
     /// \param center Scale center that is used to resize the geometry..
     void ScalePoints(const double scale,
+                     std::vector<Eigen::Vector3d>& points,
+                     const Eigen::Vector3d& center) const;
+
+    void ScalePoints(const Eigen::Vector3d& scale,
                      std::vector<Eigen::Vector3d>& points,
                      const Eigen::Vector3d& center) const;
 

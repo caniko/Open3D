@@ -92,6 +92,14 @@ OrientedBoundingBox& OrientedBoundingBox::Scale(const double scale,
     return *this;
 }
 
+OrientedBoundingBox& OrientedBoundingBox::Scale(
+        const Eigen::Vector3d& scale,
+        const Eigen::Vector3d& center) {
+    extent_ = scale.cwiseProduct(extent_);
+    center_ = scale.cwiseProduct(center_ - center) + center;
+    return *this;
+}
+
 OrientedBoundingBox& OrientedBoundingBox::Rotate(
         const Eigen::Matrix3d& R, const Eigen::Vector3d& center) {
     R_ = R * R_;

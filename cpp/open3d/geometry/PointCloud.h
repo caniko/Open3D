@@ -75,6 +75,8 @@ public:
                           bool relative = true) override;
     PointCloud &Scale(const double scale,
                       const Eigen::Vector3d &center) override;
+    PointCloud &Scale(const Eigen::Vector3d &scale,
+                      const Eigen::Vector3d &center) override;
     PointCloud &Rotate(const Eigen::Matrix3d &R,
                        const Eigen::Vector3d &center) override;
 

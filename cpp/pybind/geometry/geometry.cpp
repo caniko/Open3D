@@ -114,12 +114,15 @@ void pybind_geometry_classes(py::module &m) {
                  "Apply translation to the geometry coordinates.",
                  "translation"_a, "relative"_a = true)
             .def("scale",
-                 (Geometry3D &
-                  (Geometry3D::*)(const double, const Eigen::Vector3d &)) &
-                         Geometry3D::Scale,
+                 py::overload_cast<const double,
+                                   const Eigen::Vector3d&>(
+                         &Geometry3D::Scale),
                  "Apply scaling to the geometry coordinates.", "scale"_a,
                  "center"_a)
-            .def("scale", &Geometry3D::Scale,
+            .def("scale",
+                 py::overload_cast<const Eigen::Vector3d&,
+                 const Eigen::Vector3d&>(
+                         &Geometry3D::Scale),
                  "Apply scaling to the geometry coordinates.", "scale"_a,
                  "center"_a)
             .def("rotate",
